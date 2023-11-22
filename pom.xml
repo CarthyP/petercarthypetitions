@@ -56,7 +56,7 @@
 				<artifactId>exec-maven-plugin</artifactId>
 				<version>3.1.1</version>
 				<configuration>
-					<mainClass>org.example.petercarthyspetitions.PeterCarthyspetitionsApplication</mainClass>
+					<mainClass>org.example.petercarthyspetitions.PeterCarthysPetitionsApplication</mainClass>
 				</configuration>
 			</plugin>
 
@@ -66,7 +66,7 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass>org.example.PeterCarthysPetitionsApplication</mainClass>
+							<mainClass>org.example.petercarthyspetitions.PeterCarthysPetitionsApplication</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
