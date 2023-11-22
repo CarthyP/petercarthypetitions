@@ -32,8 +32,9 @@ pipeline {
     }
 
     post {
-
-            archiveArtifacts allowEmptyArchive: true,
-                artifacts: '**/petercarthyspetitions*.war'
+            success {
+                archiveArtifacts allowEmptyArchive: true,
+                    artifacts: '**/ct5171_test1Maven*.jar'
+            }
         }
-}
+    }
