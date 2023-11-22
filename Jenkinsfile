@@ -36,5 +36,4 @@ pipeline {
             archiveArtifacts allowEmptyArchive: true,
                 artifacts: '**/petercarthyspetitions*.war'
         }
-    }
 }
