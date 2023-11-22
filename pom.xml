@@ -66,7 +66,7 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass>org.example.PetercarthyspetitionsApplication</mainClass>
+							<mainClass>org.example.petercarthyspetitions.PetercarthyspetitionsApplication</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
