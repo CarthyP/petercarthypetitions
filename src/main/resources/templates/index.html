@@ -62,29 +62,29 @@
                     <p class="card-text multi-line-truncate" th:text="${petition.content}"></p>
                     <p class="card-text"><small class="text-muted" th:text="'Signatures: ' + ${petition.signatures.size()}"></small></p>
 
-                            <!-- Bootstrap grid system for evenly distributing links -->
-                            <div class="row text-center">
+                    <!-- Bootstrap grid system for evenly distributing links -->
+                    <div class="row text-center">
 
-                                <div class="col"></div>
+                        <div class="col"></div>
 
-                                <div class="col">
-                                    <a th:href="@{/petition/{id}(id=${petition.id})}" class="card-link custom-link">View</a>
-                                </div>
-
-                                <div class="col"></div>
-                            </div>
-
+                        <div class="col">
+                            <a th:href="@{/petition/{id}(id=${petition.id})}" class="card-link custom-link">View</a>
                         </div>
+
+                        <div class="col"></div>
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
+</div>
+</div>
 
-    <!-- Create Petitions Link -->
-    <div class="text-center mt-3" style="margin-top: 25px">
-        <a href="/petition" class="btn btn-secondary btn-lg">Create Petition</a>
-    </div>
+<!-- Create Petitions Link -->
+<div class="text-center mt-3" style="margin-top: 25px">
+    <a href="/petition" class="btn btn-secondary btn-lg">Create Petition</a>
+</div>
 
 
 </div>
