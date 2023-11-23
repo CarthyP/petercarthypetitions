@@ -12,29 +12,27 @@ pipeline {
             steps {
                 sh "mvn clean:clean"
 
-                sh "mvn dependency:copy-dependencies"
-
-                sh "mvn compiler:compile"
             }
         }
 
         stage('Package') {
             steps {
-            sh 'mvn package'
+                sh 'mvn package'
             }
         }
 
-        stage('Exec') {
+        stage ('Archive') {
             steps {
-                sh "mvn spring-boot:run"
-            }
-        }
-    }
-
-    post {
-            success {
                 archiveArtifacts allowEmptyArchive: true,
-                    artifacts: '**/ct5171_test1Maven*.jar'
+                artifacts: '**/petitionsapp*.jar'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                sh 'docker build -f Dockerfile -t myapp . '
             }
         }
     }
+}
+
