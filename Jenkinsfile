@@ -24,15 +24,15 @@ pipeline {
         stage ('Archive') {
             steps {
                 archiveArtifacts allowEmptyArchive: true,
-                artifacts: '**/petitionsapp*.jar'
+                artifacts: '**/petercarthyspetitions*.jar'
             }
         }
 
         stage('Deploy') {
             steps {
-                sh 'docker build -f Dockerfile -t petitionsapp . '
+                sh 'docker build -f Dockerfile -t petercarthyspetitions . '
                 sh 'docker rm -f "pappcontainer" || true'
-                sh 'docker run --name "pappcontainer" -p 9090:8080 --detach petitionsapp:latest'
+                sh 'docker run --name "pappcontainer" -p 9090:8080 --detach petercarthyspetitions:latest'
             }
         }
     }
