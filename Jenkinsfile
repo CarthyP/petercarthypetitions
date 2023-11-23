@@ -32,7 +32,7 @@ pipeline {
             steps {
                 sh 'docker build -f Dockerfile -t petitionsapp . '
                 sh 'docker rm -f "pappcontainer" || true'
-                sh 'docker run --name "pappcontainer" -p 9090:8081 --detach petitionsapp:latest'
+                sh 'docker run --name "pappcontainer" -p 9090:8080 --detach petitionsapp:latest'
             }
         }
     }
