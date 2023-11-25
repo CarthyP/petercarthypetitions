@@ -30,7 +30,7 @@ pipeline {
         stage ('Archive') {
             steps {
                 archiveArtifacts allowEmptyArchive: true,
-                artifacts: '**/petercarthyspetitions*.jar'
+                artifacts: '**/petercarthyspetitions*.war'
             }
         }
 

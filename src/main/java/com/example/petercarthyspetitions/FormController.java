@@ -6,7 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -94,90 +93,4 @@ public class FormController {
         // Redirect back to the petition details page
         return "redirect:/petition/" + petitionId;
     }
-
-
-//    @GetMapping("/petition/{id}/sign")
-//    public String showSignPetitionForm(@PathVariable long id, Model model) {
-//        Petition petitionToSign = petitionsList.stream()
-//                .filter(petition -> petition.getId() == id)
-//                .findFirst()
-//                .orElse(null);
-//
-//        if (petitionToSign != null) {
-//            model.addAttribute("petitionToSign", petitionToSign);
-//            model.addAttribute("signature", new Petition.Signature());
-//            return "sign-petition";
-//        } else {
-//            // Handle case where the petition with the specified ID is not found
-//            return "redirect:/petitions";
-//        }
-//    }
-//
-//    @PostMapping("/petition/{id}/sign")
-//    public String signPetition(@PathVariable long id, @ModelAttribute Petition.Signature signature) {
-//        Petition petitionToSign = petitionsList.stream()
-//                .filter(petition -> petition.getId() == id)
-//                .findFirst()
-//                .orElse(null);
-//
-//        if (petitionToSign != null) {
-//            petitionToSign.getSignatures().add(signature);
-//            // Redirect to the petition-details page
-//            return "redirect:/petition/{id}";
-//        } else {
-//            // Handle case where the petition with the specified ID is not found
-//            return "redirect:/petitions";
-//        }
-//    }
-
-
-
-//    @GetMapping("/petitions")
-//    public String showPetitions(Model model) {
-//        // Pass the list to the Thymeleaf template
-//        model.addAttribute("petitions", petitionsList);
-//        return "petition-list";
-//    }
-//
-//    // Search
-//    @GetMapping("/petitions")
-//    public String showPetitions(@RequestParam(required = false) String search, Model model) {
-//        List<Petition> filteredPetitions;
-//        System.out.println("1");
-//        if (search != null && !search.isEmpty()) {
-//            // Filter petitions based on search criteria (you can customize this logic)
-//            filteredPetitions = petitionsList.stream()
-//                    .filter(petition -> petition.getName().contains(search) || petition.getContent().contains(search))
-//                    .collect(Collectors.toList());
-//        } else {
-//            // If no search criteria, display all petitions
-//            filteredPetitions = petitionsList;
-//        }
-//        System.out.println("2");
-//        model.addAttribute("petitions", filteredPetitions);
-//        return "petition-list";
-//    }
-
-
-//    @GetMapping
-//    String setPetition(Model model) {
-//        model.addAttribute("petitions", Arrays.asList(
-//                new Petition("Save the wales", "Wales is a country that is part of the United Kingdom. It is bordered by England to the east, the Irish Sea to the north and west, the Celtic Sea to the ..."),
-//                new Petition("cats are class", "The cat (Felis catus), commonly referred to as the domestic cat or house cat, is the only domesticated species in the family Felidae."),
-//                new Petition("ban ferrets", "The name \"ferret\" is derived from the Latin furittus, meaning \"little thief\", a likely reference to the common ferret penchant for secreting away small items.")
-//        ));
-//        return "index";
-//    }
-//    @GetMapping("/create")
-//    public String petitionForm(Model model) {
-//        model.addAttribute("petition", new Petition());
-//        return "create";
-//    }
-//    @PostMapping("/create")
-//    public String petitionSubmit(@ModelAttribute Petition petition, Model model) {
-//        model.addAttribute("petition", petition);
-//        return "searchresult";
-//    }
-
-
 }
